@@ -1,0 +1,26 @@
+---
+- name: Ensure Apache is installed.
+  apt: >
+    name={{ item }}
+    state=installed
+  with_items: apache_packages
+
+- name: Configure Apache.
+  lineinfile: >
+    dest="{{ apache_server_root }}/ports.conf"
+    regexp="{{ item.regexp }}"
+    line="{{ item.line }}"
+    state=present
+  with_items:
+  - {
+    regexp: "^Listen ",
+    line: "Listen {{ apache_listen_port }}"
+  }
+
+- name: Enable Apache mods.
+  file: >
+    src={{ apache_server_root }}/mods-available/{{ item }}
+    dest={{ apache_server_root }}/mods-enabled/{{ item }}
+    state=link
+  with_items: apache_mods_enabled
+  notify: restart apache

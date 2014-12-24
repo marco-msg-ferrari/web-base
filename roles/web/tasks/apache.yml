@@ -1,0 +1,16 @@
+---
+- name: Get local dir
+  local_action: shell pwd
+  register: result
+
+- name: Symlink current version into the web root
+  file: src={{result.stdout}}/web dest=/var/www/web state=link
+
+- name: Configure site
+  template: src=web.conf dest=/etc/apache2/sites-available/
+
+- name: Enable site
+  command: a2ensite web
+
+- name: Ensure apache is running
+  service: name=apache2 state=restarted

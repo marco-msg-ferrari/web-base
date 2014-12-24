@@ -1,0 +1,23 @@
+{# Set up VirtualHosts - servername and documentroot are required. #}
+{% for vhost in apache_vhosts %}
+<VirtualHost *:{{ apache_listen_port }}>
+  ServerName {{ vhost.servername }}
+  DocumentRoot {{ vhost.documentroot }}
+  DirectoryIndex index.php index.html
+
+  <Directory "{{ vhost.documentroot }}">
+    Options -Indexes +Includes +FollowSymLinks +Multiviews
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+  </Directory>
+
+  CustomLog "/var/log/apache2/{{ vhost.servername }}-access_log" common
+  ErrorLog "/var/log/apache2/{{ vhost.servername }}-error_log"
+
+{% if vhost.extra_parameters is defined %}
+  {{ vhost.extra_parameters }}
+{% endif %}
+</VirtualHost>
+
+{% endfor %}

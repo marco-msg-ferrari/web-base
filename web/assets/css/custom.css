@@ -1,0 +1,67 @@
+/*!
+ * Custom CSS
+ */
+
+.panel-default {
+  background-color: #f1f1f1;
+}
+
+.no-decoration {
+	color: #5f7676;
+	text-decoration: none;
+}
+
+.no-decoration:hover, .no-decoration:focus {
+	color: #353D3D;
+	text-decoration: none;
+}
+
+/* modificaciones para el navbar */
+
+.page-heading {
+  padding: 20px 0;
+  margin-bottom: 0px;
+}
+.page-heading h1 {
+  margin: 0;
+}
+.page-heading .breadcrumb {
+  line-height: 2.7em;
+  border: 0 !important;
+}
+.page-heading,
+.page-heading .breadcrumb {
+  background: #f0f3f5;
+}
+
+.landing-block.bright-bg {
+  background-color: #f0f3f5;
+}
+
+#header-unit .mask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#km77 {
+  color: #2d5dd1;
+  font-family: 'Open Sans', 'Droid Sans', Tahoma, Arial, sans-serif;
+}
+
+#puntocom {
+  color: #ff6100;
+  font-family: 'Open Sans', 'Droid Sans', Tahoma, Arial, sans-serif;
+
+}
+
+hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.i-need-space-here {
+  height: 40px;
+}

@@ -1,0 +1,13 @@
+{
+    "name": "km77/patrocinios",
+    "require": {
+        "kriswallsmith/assetic": "1.2.*@dev",
+        "twig/twig": "~1.0"
+    },
+    "authors": [
+        {
+            "name": "Marco Ferrari",
+            "email": "marco.msg.ferrari@gmail.com"
+        }
+    ]
+}
