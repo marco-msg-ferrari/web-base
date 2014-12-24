@@ -11,7 +11,7 @@ It uses varius tecnologies:
 - [Twig](http://twig.sensiolabs.org/)
 - [Assetic](https://github.com/kriswallsmith/assetic)
 
-#How
+#How?
 - Download the zip file
 - Decompress it
 - enter the directory
