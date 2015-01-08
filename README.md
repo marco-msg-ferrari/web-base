@@ -12,10 +12,20 @@ It uses varius tecnologies:
 - [Twig](http://twig.sensiolabs.org/)
 - [Assetic](https://github.com/kriswallsmith/assetic)
 
-#How?
+#How to devel?
 - Download the zip file
 - Decompress it
 - enter the directory
 - vagrant up
 - point a browser to [10.0.0.100](http://10.0.0.100)
 - edit files in web directory
+
+#How to deploy?
+- Get the files into the server ( git / s3 / drive / ... )
+- bash install.sh -e server
+
+#How to change roles in server enviroment?
+For the server install we use the setup_server.yml file instead of the setup_dev.yml one.
+So you can change there whatever you need to be different in the server env.
+Ex. do not install DDBB or Queue server.
+
